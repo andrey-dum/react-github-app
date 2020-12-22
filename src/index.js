@@ -4,12 +4,15 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { AlertState } from './components/context/AlertState';
 
 ReactDOM.render(
   <React.StrictMode>
+    <AlertState>
     <Router>
       <App />
     </Router>
+    </AlertState>
   </React.StrictMode>,
   document.getElementById('root')
 );
