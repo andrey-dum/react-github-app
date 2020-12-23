@@ -4,15 +4,18 @@ import { BrowserRouter as Router } from 'react-router-dom'
 import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import { AlertState } from './components/context/AlertState';
+import { AlertState } from './context/alert/AlertState';
+import { GithubState } from './context/github/GithubState';
 
 ReactDOM.render(
   <React.StrictMode>
-    <AlertState>
-    <Router>
-      <App />
-    </Router>
-    </AlertState>
+    <GithubState>
+      <AlertState>
+      <Router>
+        <App />
+      </Router>
+      </AlertState>
+    </GithubState>
   </React.StrictMode>,
   document.getElementById('root')
 );
