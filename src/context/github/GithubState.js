@@ -48,17 +48,19 @@ export const GithubState = ({children}) => {
         })
     }
 
+   
     const getRepos = async name => {
         setLoading()
-        const response = axios.get(
-            withCreds(`https://api.github.com/users/${name}/repos?per_page=5&`)
+    
+        const response = await axios.get(
+          withCreds(`https://api.github.com/users/${name}/repos?per_page=5&`)
         )
-
+    
         dispatch({
-            type: GET_REPOS,
-            payload: response.data
+          type: GET_REPOS,
+          payload: response.data
         })
-    }
+      }
 
     const clearUsers = () => dispatch({ type: CLEAR_USERS })
 
